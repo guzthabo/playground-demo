@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class CurrentlyForestcastResponse {
 	
 	private Instant time;
-	private int temperature;
+	private float temperature;
 	
 	public Instant getTime() {
 		return time;
@@ -18,17 +18,17 @@ public class CurrentlyForestcastResponse {
 		this.time = time;
 	}
 
-	public int getTemperature() {
+	public float getTemperature() {
 		return temperature;
 	}
 
-	public void setTemperature(int temperature) {
+	public void setTemperature(float temperature) {
 		this.temperature = temperature;
 	}
 
 	@Override
 	public String toString() {
-		return "CurrentlyForestcastResponse [time=" + time + ", temperature=" + temperature + "]";
+		return " [time=" + time + ", temperature=" + temperature + "]";
 	}
 	
 }

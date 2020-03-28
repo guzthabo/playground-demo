@@ -1,42 +1,50 @@
 package com.altimetrik.playground.api.resource;
 
 import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import io.swagger.annotations.ApiModelProperty;
 
 public class Forecast {
 	
-	private LocalDate date;
-	private LocalDateTime time;
-	private int temperature;
+	@JsonFormat(pattern = "yyyy-MM-dd", timezone = "UTC")
+	@ApiModelProperty(example = "2020-03-28")
+	private Instant date;
+	
+	@JsonFormat(pattern = "HH:mm:ss", timezone = "UTC")
+	@ApiModelProperty(example = "21:01:04")
+	private Instant time;
+	
+	private float temperature;
 	private Instant sunriseTime;
 	private Instant sunsetTime;
-	private int temperatureHigh;
+	private float temperatureHigh;
 	private Instant temperatureHighTime;
-	private int temperatureLow;
+	private float temperatureLow;
 	private Instant temperatureLowTime;
 	
-	public LocalDate getDate() {
+	public Instant getDate() {
 		return date;
 	}
 	
-	public void setDate(LocalDate date) {
+	public void setDate(Instant date) {
 		this.date = date;
 	}
 	
-	public LocalDateTime getTime() {
+	public Instant getTime() {
 		return time;
 	}
 	
-	public void setTime(LocalDateTime time) {
+	public void setTime(Instant time) {
 		this.time = time;
 	}
 	
-	public int getTemperature() {
+	public float getTemperature() {
 		return temperature;
 	}
 	
-	public void setTemperature(int temperature) {
+	public void setTemperature(float temperature) {
 		this.temperature = temperature;
 	}
 	
@@ -56,11 +64,11 @@ public class Forecast {
 		this.sunsetTime = sunsetTime;
 	}
 	
-	public int getTemperatureHigh() {
+	public float getTemperatureHigh() {
 		return temperatureHigh;
 	}
 	
-	public void setTemperatureHigh(int temperatureHigh) {
+	public void setTemperatureHigh(float temperatureHigh) {
 		this.temperatureHigh = temperatureHigh;
 	}
 	
@@ -72,11 +80,11 @@ public class Forecast {
 		this.temperatureHighTime = temperatureHighTime;
 	}
 	
-	public int getTemperatureLow() {
+	public float getTemperatureLow() {
 		return temperatureLow;
 	}
 	
-	public void setTemperatureLow(int temperatureLow) {
+	public void setTemperatureLow(float temperatureLow) {
 		this.temperatureLow = temperatureLow;
 	}
 	

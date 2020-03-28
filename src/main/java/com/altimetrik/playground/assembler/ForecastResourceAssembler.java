@@ -10,15 +10,15 @@ import com.altimetrik.playground.web.client.response.ForecastResponse;
 @Component
 public class ForecastResourceAssembler {
 	
-	private ModelMapper mapper;
+	private ModelMapper modelMapper;
 	
-	public ForecastResourceAssembler(ModelMapper mapper) {
-		this.mapper = mapper;
+	public ForecastResourceAssembler(ModelMapper modelMapper) {
+		this.modelMapper = modelMapper;
 	}
-	
+
 	public ForecastResource toResource(ForecastResponse current, ForecastResponse lastYear) {
-		Forecast currentForecast = mapper.map(current, Forecast.class);
-		Forecast lastYearForecast = mapper.map(lastYear, Forecast.class);
+		Forecast currentForecast = modelMapper.map(current, Forecast.class);
+		Forecast lastYearForecast = modelMapper.map(lastYear, Forecast.class);
 
 		return new ForecastResource(currentForecast, lastYearForecast);
 	}

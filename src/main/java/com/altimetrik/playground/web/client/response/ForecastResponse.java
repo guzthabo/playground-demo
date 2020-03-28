@@ -1,8 +1,5 @@
 package com.altimetrik.playground.web.client.response;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -10,11 +7,7 @@ public class ForecastResponse {
 	
 	private double latitude;
 	private double longitude;
-	
-	@NotNull
 	private CurrentlyForestcastResponse currently;
-	
-	@NotEmpty
 	private DailyForestcastResponse daily;
 	
 	public double getLatitude() {
@@ -48,10 +41,10 @@ public class ForecastResponse {
 	public void setDaily(DailyForestcastResponse daily) {
 		this.daily = daily;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "ForecastResponse [latitude=" + latitude + ", longitude=" + longitude + ", currently=" + currently
+		return "[latitude=" + latitude + ", longitude=" + longitude + ", currently=" + currently
 				+ ", daily=" + daily + "]";
 	}
 	

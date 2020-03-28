@@ -40,10 +40,10 @@ public class ForecastServiceImpl implements ForecastService {
 				time.getEpochSecond());
 		
 		if (!currentForecast.isPresent()) {
-			//throw ex
+			
 		}
 		
-		LOG.info("Forecast response: {}", currentForecast.get());
+		LOG.info("API response: {}", currentForecast.get());
 		
 		LocalDateTime lastYear = now.minusYears(1);
 		long lastYearEpoch = lastYear.toInstant(ZoneOffset.UTC).getEpochSecond();
@@ -55,7 +55,7 @@ public class ForecastServiceImpl implements ForecastService {
 			//throw ex
 		}
 		
-		LOG.info("Forecast response: {}", lastYearForecast.get());
+		LOG.info("API response: {}", lastYearForecast.get());
 
 		return assembler.toResource(currentForecast.get(), lastYearForecast.get());
 	}

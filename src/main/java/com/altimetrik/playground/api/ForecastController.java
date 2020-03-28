@@ -31,7 +31,12 @@ public class ForecastController {
 	
 	@GetMapping
 	public ResponseEntity<ForecastResource> getForecast(@RequestParam Double latitude, @RequestParam Double longitude) {
-		LOG.debug("Calculating forecast for: {}, {}", latitude, longitude);
-		return ResponseEntity.ok(service.getForecast(latitude, longitude, Instant.now()));
+		LOG.info("Calculating forecast for: {}, {}", latitude, longitude);
+		
+		ForecastResource resource = service.getForecast(latitude, longitude, Instant.now());
+		
+		LOG.info("Forecasts: {}", resource);
+		
+		return ResponseEntity.ok(resource);
 	}
 }

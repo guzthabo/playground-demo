@@ -31,6 +31,6 @@ public class ForecastResource {
 	
 	@Override
 	public String toString() {
-		return "ForecastResource [currentForecast=" + currentForecast + ", lastYearForecast=" + lastYearForecast + "]";
+		return "[currentForecast=" + currentForecast + ", lastYearForecast=" + lastYearForecast + "]";
 	}
 }
